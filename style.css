@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+#inputDiv {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#input-meal, 
+#search-meal {
+    padding: 10px;
+}
+
+#search-meal {
+    cursor: pointer;
+}
+
+#meal-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.mealDiv {
+    background: #F8F7F5;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mealDiv img {
+    display: block;
+    width: 100%;
+}
