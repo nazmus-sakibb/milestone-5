@@ -49,3 +49,14 @@ body {
 #meal-info {
     margin: 50px 34%;
 }
+
+#meal-info i {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #F06C4E;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

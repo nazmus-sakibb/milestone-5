@@ -18,7 +18,6 @@ const searchBtn = document.getElementById('search-meal').addEventListener('click
                             <div class="meal-div">
                                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
                                 <h4 class="meal-name">${meal.strMeal}</h4>
-                                <button onclick="displayMealInfo('${meal.strMeal}')">Details</button>
                             </div>
                         </a>
                     `)
@@ -44,11 +43,11 @@ const renderMealInfo = meals => {
         <img src="${meals.strMealThumb}">
         <h2>${meals.strMeal}</h2>
         <h4>Ingredients</h4>
-        <p>${meals.strIngredient1}</p>
-        <p>${meals.strIngredient2}</p>
-        <p>${meals.strIngredient3}</p>
-        <p>${meals.strIngredient4}</p>
-        <p>${meals.strIngredient5}</p>
-        <p>${meals.strIngredient6}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient1}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient2}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient3}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient4}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient5}</p>
+        <p><i class="fas fa-check-square"></i>${meals.strIngredient6}</p>
     `
 }
