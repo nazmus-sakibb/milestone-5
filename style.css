@@ -23,7 +23,11 @@ body {
     margin-top: 50px;
 }
 
-.mealDiv {
+#meal-results img{
+    display: inline-block;
+}
+
+.meal-div {
     background: #F8F7F5;
     overflow: hidden;
     border-radius: 10px;
@@ -31,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-.mealDiv img {
+.meal-div img {
     display: block;
     width: 100%;
 }
