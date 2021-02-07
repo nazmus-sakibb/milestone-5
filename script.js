@@ -5,7 +5,7 @@ const mealResults = document.getElementById('meal-results');
 const searchBtn = document.getElementById('search-meal').addEventListener('click', function () {
     const inputMeal = document.getElementById('input-meal');
     const input = inputMeal.value;
-    // console.log(inputMeal.value);
+
     if (input == '' || input == null) {
         alert('Please enter a Meal name');
     } else {
@@ -29,6 +29,7 @@ const searchBtn = document.getElementById('search-meal').addEventListener('click
 })
 
 
+// Meal Result
 const displayMealInfo = name => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
     fetch(url)
@@ -37,6 +38,7 @@ const displayMealInfo = name => {
 };
 
 
+// Meal Info
 const renderMealInfo = meals => {
     const mealInfo = document.getElementById('meal-info');
     mealInfo.innerHTML = `
