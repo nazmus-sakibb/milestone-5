@@ -14,13 +14,13 @@ const searchBtn = document.getElementById('search-meal').addEventListener('click
             .then(res => res.json())
             .then(data => {
                 mealResults.innerHTML = data.meals.map(meal => `
-                        <div onclick="displayMealInfo('${meal.strMeal}')">
+                        <a href="#" onclick="displayMealInfo('${meal.strMeal}')">
                             <div class="meal-div">
                                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
                                 <h4 class="meal-name">${meal.strMeal}</h4>
                                 <button onclick="displayMealInfo('${meal.strMeal}')">Details</button>
                             </div>
-                        </div>
+                        </a>
                     `)
                     .join('');
             });
