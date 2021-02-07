@@ -39,3 +39,13 @@ body {
     display: block;
     width: 100%;
 }
+
+#meal-info img {
+    display: inline-block;
+    width: 400px;
+    border-radius: 15px;
+}
+
+#meal-info {
+    margin: 50px 34%;
+}
