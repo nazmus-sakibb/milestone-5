@@ -1,10 +1,12 @@
 body {
     margin: 0;
+    font-family: tahoma;
 }
 
-#inputDiv {
+.container {
+    width: 85%;
     margin: 0 auto;
-    text-align: center;
+    overflow: hidden;
 }
 
 #input-meal, 
@@ -12,9 +14,21 @@ body {
     padding: 10px;
 }
 
-#search-meal {
-    cursor: pointer;
+#input-meal {
+    padding-right: 150px;
+    border-radius: 5px 0 0 5px;
 }
+
+#search-meal {
+    width: 80px;
+    background-color: #F06C4E;
+    color: white;
+    border: 2px solid #F06C4E;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-left: -6px;
+}
+
 
 #meal-results {
     display: grid;
@@ -47,7 +61,7 @@ body {
 }
 
 #meal-info {
-    margin: 50px 34%;
+    margin: 50px 32.5%;
 }
 
 #meal-info i {
@@ -59,4 +73,33 @@ body {
 a {
     text-decoration: none;
     color: black;
+}
+
+.input-div {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+
+
+
+/*Header & Menu Area */
+.header-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.main-menu {
+    overflow: hidden;
+}
+
+.menu-area ul {
+    list-style: none;
+    float: right;
+    margin-top: 30px;
+}
+
+.menu-area ul li {
+    float: left;
+    margin-left: 30px;
 }
