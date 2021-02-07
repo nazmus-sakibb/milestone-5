@@ -9,17 +9,17 @@ body {
     overflow: hidden;
 }
 
-#input-meal, 
-#search-meal {
+#search-field, 
+.search-button {
     padding: 10px;
 }
 
-#input-meal {
+#search-field {
     padding-right: 150px;
     border-radius: 5px 0 0 5px;
 }
 
-#search-meal {
+.search-button {
     width: 80px;
     background-color: #F06C4E;
     color: white;
@@ -30,18 +30,18 @@ body {
 }
 
 
-#meal-results {
+#food-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 40px;
     margin-top: 50px;
 }
 
-#meal-results img{
+#food-container img{
     display: inline-block;
 }
 
-.meal-div {
+.food-div {
     background: #F8F7F5;
     overflow: hidden;
     border-radius: 10px;
@@ -49,7 +49,7 @@ body {
     cursor: pointer;
 }
 
-.meal-div img {
+.food-div img {
     display: block;
     width: 100%;
 }
@@ -57,6 +57,7 @@ body {
 #meal-info img {
     display: inline-block;
     width: 400px;
+    height: auto;
     border-radius: 15px;
 }
 
@@ -102,4 +103,9 @@ a {
 .menu-area ul li {
     float: left;
     margin-left: 30px;
+}
+
+.error-text {
+    text-align: center;
+    color: red;
 }

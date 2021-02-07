@@ -1,45 +1,43 @@
-const mealResults = document.getElementById('meal-results');
-
-
-// Search meal
-const searchBtn = document.getElementById('search-meal').addEventListener('click', function () {
-    const inputMeal = document.getElementById('input-meal');
-    const input = inputMeal.value;
-
-    if (input == '' || input == null) {
-        alert('Please enter a Meal name');
-    } else {
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                mealResults.innerHTML = data.meals.map(meal => `
-                        <a href="#" onclick="displayMealInfo('${meal.strMeal}')">
-                            <div class="meal-div">
-                                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                                <h4 class="meal-name">${meal.strMeal}</h4>
-                            </div>
-                        </a>
-                    `)
-                    .join('');
-            });
-        // Clear search text
-        inputMeal.value = '';
-    }
-})
-
-
-// Meal Result
-const displayMealInfo = name => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
+const searchFoods = () => {
+    const searchText = document.getElementById('search-field').value;
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+    // load data
     fetch(url)
         .then(res => res.json())
-        .then(data => renderMealInfo(data.meals[0]));
-};
+        .then(data => displayFoods(data.meals))
+        .catch(error => displayError('Something went wrong! Please, try again later!!!'));
+}
+
+const displayFoods = foods => {
+    const foodContainer = document.getElementById('food-container');
+    foodContainer.innerHTML = '';
+    foods.forEach(food => {
+        const foodDiv = document.createElement('div');
+
+        foodDiv.className = 'food-div';
+        foodDiv.innerHTML = `
+            <a href="#" onclick="displayFoodInfo('${food.strMeal}')">
+                <img src="${food.strMealThumb}">
+                <h4>${food.strMeal}</h4>
+            </a>
+        `;
+
+        foodContainer.appendChild(foodDiv);
+    });
+}
 
 
 // Meal Info
-const renderMealInfo = meals => {
+const displayFoodInfo = name => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => renderFoodInfo(data.meals[0]))
+        .catch(error => displayError('Sorry! Failed to load data from the server. Please, try again later!!!'));
+};
+
+
+const renderFoodInfo = meals => {
     const mealInfo = document.getElementById('meal-info');
     mealInfo.innerHTML = `
         <img src="${meals.strMealThumb}">
@@ -51,5 +49,13 @@ const renderMealInfo = meals => {
         <p><i class="fas fa-check-square"></i>${meals.strIngredient4}</p>
         <p><i class="fas fa-check-square"></i>${meals.strIngredient5}</p>
         <p><i class="fas fa-check-square"></i>${meals.strIngredient6}</p>
-    `
+    `;
+}
+
+
+
+// Error message
+const displayError = error => {
+    const errorText = document.getElementById('error-message');
+    errorText.innerText = error;
 }

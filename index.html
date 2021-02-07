@@ -29,15 +29,17 @@
         </div>
 
         <div class="input-div">
-            <input id="input-meal" type="text" placeholder="Search for Meal...">
-            <button id="search-meal">Search</button>
+            <input id="search-field" type="text" placeholder="Search for Meal...">
+            <button onclick="searchFoods()" class="search-button">Search</button>
         </div>
+
+        <h3 id="error-message" class="error-text"></h3>
 
         <div class="meal-info">
             <div id="meal-info"></div>
         </div>
 
-        <div id="meal-results"></div>
+        <div id="food-container"></div>
     </div>
 
 
